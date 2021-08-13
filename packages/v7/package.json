@@ -23,9 +23,7 @@
   },
   "dependencies": {
     "@chakra-ui/react": "^1",
-    "@emotion/cache": "^11",
     "@emotion/react": "^11",
-    "@emotion/server": "^11",
     "@emotion/styled": "^11",
     "@fec/remark-a11y-emoji": "^3",
     "@grikomsn/eslint-config": "*",

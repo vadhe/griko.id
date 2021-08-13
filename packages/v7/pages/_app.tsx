@@ -3,23 +3,19 @@ import * as React from "react";
 import { WebsiteSeoTagsQuery } from "~generated/graphql";
 import DefaultLayout from "~layouts/default";
 import cms from "~lib/cms";
-import emotionCache from "~lib/emotion-cache";
 import { MetaContext } from "~store/meta";
 import theme from "~theme";
 
 import { ChakraProvider } from "@chakra-ui/react";
-import { CacheProvider } from "@emotion/react";
 import NextApp, { AppContext, AppProps } from "next/app";
 
 const StyleProvider: React.FC = (props) => {
   const { children } = props;
 
   return (
-    <CacheProvider value={emotionCache}>
-      <ChakraProvider resetCSS theme={theme}>
-        {children}
-      </ChakraProvider>
-    </CacheProvider>
+    <ChakraProvider resetCSS theme={theme}>
+      {children}
+    </ChakraProvider>
   );
 };
 
