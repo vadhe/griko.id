@@ -57,7 +57,7 @@ const HomePage: NextPage<HomePageProps> = (props) => {
             </Box>
           </NextLink>
 
-          <Heading size="3xl">Hey! I&apos;m Griko Nibras.</Heading>
+          <Heading size="3xl">Hey! I&apos;m Rivaldi Putra.</Heading>
 
           <Text color="whiteAlpha.700" fontSize={["lg", "xl"]} maxW="2xl">
             {meta.site.seo.fallback.description}
