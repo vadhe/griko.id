@@ -19,6 +19,7 @@
     "#": "###################################################################"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^1.0.15",
     "lerna": "^4",
     "patch-package": "^6",
     "postinstall-postinstall": "^2"

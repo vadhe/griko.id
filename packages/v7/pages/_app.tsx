@@ -5,7 +5,7 @@ import DefaultLayout from "~layouts/default";
 import emotionCache from "~lib/emotion-cache";
 import theme from "~theme";
 
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 import { CacheProvider } from "@emotion/react";
 import { AppProps } from "next/app";
 
@@ -15,6 +15,7 @@ const StyleProvider: React.FC = (props) => {
   return (
     <CacheProvider value={emotionCache}>
       <ChakraProvider resetCSS theme={theme}>
+        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         {children}
       </ChakraProvider>
     </CacheProvider>

@@ -10,7 +10,7 @@ import useKeybinds from "~hooks/use-keybinds";
 import useNProgress from "~hooks/use-nprogress";
 import { useCheatsheetSyncSetup } from "~store/global";
 
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { DefaultSeo, SocialProfileJsonLd } from "next-seo";
@@ -26,7 +26,7 @@ function Effects() {
 
 const DefaultLayout: React.FC = (props) => {
   const { children } = props;
-
+  const bgColor = useColorModeValue("#885f5f", "gray.900");
   const router = useRouter();
 
   return (
@@ -59,7 +59,7 @@ const DefaultLayout: React.FC = (props) => {
         url={siteConfig.siteUrl}
       />
 
-      <Flex flexDir="column" minH="100vh">
+      <Flex backgroundColor={bgColor} flexDir="column" minH="100vh">
         <Navbar />
         <Box key={router.asPath} flexGrow={1}>
           {children}

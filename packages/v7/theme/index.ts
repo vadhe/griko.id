@@ -54,7 +54,7 @@ export default extendTheme({
         scrollBehavior: "smooth",
       },
       body: {
-        bg: "gray.900",
+        // bg: "gray.900",
         color: "whiteAlpha.900",
         cursor: "default",
         fontFamily: "body",
