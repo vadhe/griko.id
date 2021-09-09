@@ -14,6 +14,7 @@ import {
   SlideFade,
   Text,
   useBreakpointValue,
+  useColorMode,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -27,6 +28,7 @@ const MobileModal: React.FC = () => {
     React.useCallback((store) => [store.isMobileDrawerOpen, store.closeMobileDrawer, store.openMobileDrawer], []),
     shallow,
   );
+  const { colorMode, toggleColorMode } = useColorMode();
 
   const router = useRouter();
 
@@ -45,6 +47,9 @@ const MobileModal: React.FC = () => {
         <ModalOverlay>
           <ModalContent>
             <ModalBody d="flex" flexDir="column" justifyContent="center" p={8}>
+              <Button as="a" onClick={toggleColorMode} size="lg" variant="ghost">
+                Toggle {colorMode === "light" ? "Dark" : "Light"}
+              </Button>
               {routeArray.map(([route, name]) => (
                 <Link key={name} href={route} passHref>
                   <Button
