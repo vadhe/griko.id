@@ -5,7 +5,18 @@ import { AboutStaticPropsQuery } from "~generated/graphql";
 import meta from "~generated/meta.json";
 import cms from "~lib/cms";
 
-import { Box, Container, Heading, Link, List, ListItem, SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Heading,
+  Link,
+  List,
+  ListItem,
+  SimpleGrid,
+  Stack,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { NextPage } from "@grikomsn/shared/types/next";
 import trimHttps from "@grikomsn/shared/utils/trim-https";
 import { GetStaticProps } from "next";
@@ -33,7 +44,7 @@ const pageMeta = {
 
 const AboutPage: NextPage<AboutPageProps> = (props) => {
   const { data } = props;
-
+  const variant = useColorModeValue("dark", "light");
   return (
     <>
       <NextSeo {...pageMeta} />
@@ -69,7 +80,7 @@ const AboutPage: NextPage<AboutPageProps> = (props) => {
 
         <Text pb={2}>
           You can reach out via email at{" "}
-          <Link href={`mailto:${meta.about.email}`} variant="link">
+          <Link href={`mailto:${meta.about.email}`} variant={variant}>
             {meta.about.email}
           </Link>
           , or via socials below:
@@ -78,7 +89,7 @@ const AboutPage: NextPage<AboutPageProps> = (props) => {
           {Object.entries(meta.about.socialsJson).map(([name, href]) => (
             <ListItem key={name}>
               {name} -{" "}
-              <Link href={href} isExternal variant="link">
+              <Link href={href} isExternal variant={variant}>
                 {trimHttps(href)}
               </Link>
             </ListItem>

@@ -5,7 +5,7 @@ import { HomeStaticPropsQuery } from "~generated/graphql";
 import meta from "~generated/meta.json";
 import cms from "~lib/cms";
 
-import { Box, Container, Heading, Link, Stack, Text } from "@chakra-ui/react";
+import { Box, Container, Heading, Link, Stack, Text, useColorModeValue } from "@chakra-ui/react";
 import { NextPage } from "@grikomsn/shared/types/next";
 import { GetStaticProps } from "next";
 import NextLink from "next/link";
@@ -27,6 +27,7 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
 
 const HomePage: NextPage<HomePageProps> = (props) => {
   const { data } = props;
+  const variant = useColorModeValue("light", "dark");
 
   return (
     <>
@@ -59,7 +60,7 @@ const HomePage: NextPage<HomePageProps> = (props) => {
 
           <Heading size="3xl">Hey! I&apos;m Rivaldi Putra.</Heading>
 
-          <Text color="whiteAlpha.700" fontSize={["lg", "xl"]} maxW="2xl">
+          <Text fontSize={["lg", "xl"]} maxW="2xl">
             {meta.site.seo.fallback.description}
           </Text>
 
@@ -67,11 +68,11 @@ const HomePage: NextPage<HomePageProps> = (props) => {
 
           <Text pb={8}>
             Reach me via email at{" "}
-            <Link href={`mailto:${meta.about.email}`} variant="link">
+            <Link href={`mailto:${meta.about.email}`} variant={variant}>
               {meta.about.email}
             </Link>
             , or Twitter at{" "}
-            <Link href={`https://twitter.com/${meta.site.seo.twitterAccount}`} isExternal variant="link">
+            <Link href={`https://twitter.com/${meta.site.seo.twitterAccount}`} isExternal variant={variant}>
               {meta.site.seo.twitterAccount}
             </Link>
             .

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import * as React from "react";
 
 import AdaptiveTooltip from "~components/adaptive-tooltip";
@@ -19,6 +20,7 @@ import {
   Text,
   UnorderedList,
   useClipboard,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { FaCheck, FaCopy } from "react-icons/fa";
 import { NormalComponents, SpecialComponents } from "react-markdown/src/ast-to-react";
@@ -37,7 +39,8 @@ function wrapLinkId(id: unknown, children: React.ReactNode) {
 export const baseComponents: Components = {
   a({ node, ...rest }) {
     const href = rest.href as string;
-    return <Link isExternal={!href.startsWith("#")} variant="link" {...rest} />;
+    const variant = useColorModeValue("light", "dark");
+    return <Link isExternal={!href.startsWith("#")} variant={variant} {...rest} />;
   },
 
   p({ node, ...rest }) {

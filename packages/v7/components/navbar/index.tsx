@@ -20,15 +20,17 @@ const Navbar: React.FC = () => {
     [router.route],
   );
 
-  // const [gray900] = useToken("colors", ["gray.900"]) as [string];
-  const bgColor = useColorModeValue("##d6abab8c", "rgba(23, 25, 35, 0.6)");
-  const colorScheme = useColorModeValue("gray", "yellow");
+  const bgColor = useColorModeValue("rgba(255, 255, 255, 0.6)", "rgba(23, 25, 35, 0.6)");
+  const color = useColorModeValue("#000", "#fff");
+  const borderBottomColor = useColorModeValue("#ff069a47", "whiteAlpha.50");
+  const colorScheme = useColorModeValue("pink", "yellow");
 
   return (
     <HStack
       bgColor={bgColor}
-      borderBottomColor="whiteAlpha.50"
+      borderBottomColor={borderBottomColor}
       borderBottomWidth="2px"
+      color={color}
       d={["none", "flex"]}
       insetX={0}
       justify="center"

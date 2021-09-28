@@ -10,8 +10,11 @@ export default extendTheme({
     },
     Link: {
       variants: {
-        link: {
+        dark: {
           color: "yellow.200",
+        },
+        light: {
+          color: "pink.900",
         },
       },
     },
@@ -35,7 +38,14 @@ export default extendTheme({
   config: {
     initialColorMode: "dark",
   },
-
+  colors: {
+    pink: {
+      100: "",
+      200: "",
+      500: "",
+      900: "#ff0094",
+    },
+  },
   fonts: {
     body: `'Archivo',${defaultTheme.fonts.body}`,
     heading: `'Manrope',${defaultTheme.fonts.heading}`,

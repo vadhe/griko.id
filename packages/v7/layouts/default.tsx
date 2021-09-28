@@ -26,7 +26,9 @@ function Effects() {
 
 const DefaultLayout: React.FC = (props) => {
   const { children } = props;
-  const bgColor = useColorModeValue("#885f5f", "gray.900");
+  // const bgColor = useColorModeValue("#885f5f", "gray.900");
+  const bgColor = useColorModeValue("#fff", "gray.900");
+  const color = useColorModeValue("#000", "#fff");
   const router = useRouter();
 
   return (
@@ -61,7 +63,7 @@ const DefaultLayout: React.FC = (props) => {
 
       <Flex backgroundColor={bgColor} flexDir="column" minH="100vh">
         <Navbar />
-        <Box key={router.asPath} flexGrow={1}>
+        <Box key={router.asPath} color={color} flexGrow={1}>
           {children}
         </Box>
         <Footer />
