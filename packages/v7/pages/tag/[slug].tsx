@@ -105,7 +105,7 @@ const TagPage: NextPage<TagPageProps> = (props) => {
             </Heading>
             <Stack spacing={16}>
               {relations.allPosts.map((post) => (
-                <NextLink key={post.slug} href={`/blog/${post.slug as strinpostg}`} passHref>
+                <NextLink key={post.slug} href={`/blog/${post.slug as string}`} passHref>
                   <PostItem post={post} />
                 </NextLink>
               ))}
